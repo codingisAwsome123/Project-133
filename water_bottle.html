@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Water Bottle</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    </head>
+    <body background="cool.png">
+        <center>
+        <h1 class="btn btn-info">Water Bottle</h1>
+        <button id="status" class="btn btn-warning">Status: Detecting Object</button>
+        <br>
+        <button id="objects" class="btn btn-success">Objects Detected: None</button>
+        </center>
+        <a id="back" class="btn btn-danger" href="index.html">Back to Menu</a>
+        <script>modelStatus=[results];
+
+            function draw(){
+                if(modelStatus > 0){
+                    for(var i=0; i<objects.length; i++){
+                    document.getElementById("status").innerHTML="Status: Objects Detected";
+                    fill(255,0,0);
+                    percent=floor(objects[i].confidence*100);
+                    text(objects[i].label+ " " + percent + "%", objects[i].x + 5, objects [i].y+15);
+                    noFill();
+                    stroke(255,0,0);
+                    RTCCertificate(objects[i].x,objects[i].y,objects[i].width,objects[i].height);
+                    }
+                }
+            }</script>
+    </body>
+</html>
